@@ -1,0 +1,14 @@
+C:\Users\gs\Documents\c# practise\CrimeHotspotSystem\CrimeHotspotSystem\bin\Debug\CrimeHotspotSystem.exe.config
+C:\Users\gs\Documents\c# practise\CrimeHotspotSystem\CrimeHotspotSystem\bin\Debug\CrimeHotspotSystem.exe
+C:\Users\gs\Documents\c# practise\CrimeHotspotSystem\CrimeHotspotSystem\bin\Debug\CrimeHotspotSystem.pdb
+C:\Users\gs\Documents\c# practise\CrimeHotspotSystem\CrimeHotspotSystem\bin\Debug\System.Data.SQLite.dll
+C:\Users\gs\Documents\c# practise\CrimeHotspotSystem\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.csproj.AssemblyReference.cache
+C:\Users\gs\Documents\c# practise\CrimeHotspotSystem\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.LoginForm.resources
+C:\Users\gs\Documents\c# practise\CrimeHotspotSystem\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Properties.Resources.resources
+C:\Users\gs\Documents\c# practise\CrimeHotspotSystem\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.csproj.GenerateResource.cache
+C:\Users\gs\Documents\c# practise\CrimeHotspotSystem\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.csproj.CoreCompileInputs.cache
+C:\Users\gs\Documents\c# practise\CrimeHotspotSystem\CrimeHotspotSystem\obj\Debug\CrimeHot.E0CA7A80.Up2Date
+C:\Users\gs\Documents\c# practise\CrimeHotspotSystem\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.exe
+C:\Users\gs\Documents\c# practise\CrimeHotspotSystem\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.pdb
+C:\Users\gs\Documents\c# practise\CrimeHotspotSystem\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.AdminDashboard.resources
+C:\Users\gs\Documents\c# practise\CrimeHotspotSystem\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.Dashboard_items.frmDashboard.resources
