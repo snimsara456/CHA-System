@@ -75,12 +75,6 @@
     <Compile Include="Forms\Dashboard items\frmDashboard.Designer.cs">
       <DependentUpon>frmDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Dashboard items\frmHeatmap.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Dashboard items\frmHeatmap.Designer.cs">
-      <DependentUpon>frmHeatmap.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Dashboard items\frmProfile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +93,18 @@
     <Compile Include="Forms\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ReportFormItems\CrimeDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReportFormItems\CrimeDetails.Designer.cs">
+      <DependentUpon>CrimeDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ReportFormItems\UserDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReportFormItems\UserDetails.Designer.cs">
+      <DependentUpon>UserDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\AdminDashboard.resx">
@@ -113,9 +119,6 @@
     <EmbeddedResource Include="Forms\Dashboard items\frmDashboard.resx">
       <DependentUpon>frmDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Dashboard items\frmHeatmap.resx">
-      <DependentUpon>frmHeatmap.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dashboard items\frmProfile.resx">
       <DependentUpon>frmProfile.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,6 +127,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReportFormItems\CrimeDetails.resx">
+      <DependentUpon>CrimeDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReportFormItems\UserDetails.resx">
+      <DependentUpon>UserDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -161,6 +170,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Home_icon_blue-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home_icon_blue-11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Back.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

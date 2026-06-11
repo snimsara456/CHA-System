@@ -48,6 +48,12 @@ namespace CrimeHotspotSystem.Forms
             pnlNav.Top = btnAddCrime.Top;
             pnlNav.Left = btnAddCrime.Left;
             btnAddCrime.BackColor = Color.FromArgb(46, 51, 73);
+
+            this.PnlFormLoader.Controls.Clear();
+            frmAddCrimes frmAddCrimes_vrb = new frmAddCrimes() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            frmAddCrimes_vrb.FormBorderStyle = FormBorderStyle.None;
+            this.PnlFormLoader.Controls.Add(frmAddCrimes_vrb);
+            frmAddCrimes_vrb.Show();
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
@@ -64,13 +70,8 @@ namespace CrimeHotspotSystem.Forms
             frmDashboard_vrb.Show();
         }
 
-        private void btnHeatmap_Click(object sender, EventArgs e)
-        {
-            pnlNav.Height = btnHeatmap.Height;
-            pnlNav.Top = btnHeatmap.Top;
-            pnlNav.Left = btnHeatmap.Left;
-            btnHeatmap.BackColor = Color.FromArgb(46, 51, 73);
-        }
+        
+        
 
         private void btnReport_Click(object sender, EventArgs e)
         {
@@ -78,6 +79,12 @@ namespace CrimeHotspotSystem.Forms
             pnlNav.Top = btnReport.Top;
             pnlNav.Left = btnReport.Left;
             btnReport.BackColor = Color.FromArgb(46, 51, 73);
+
+            this.PnlFormLoader.Controls.Clear();
+            frmReport frmReport_vrb = new frmReport() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            frmReport_vrb.FormBorderStyle = FormBorderStyle.None;
+            this.PnlFormLoader.Controls.Add(frmReport_vrb);
+            frmReport_vrb.Show();
         }
 
         private void btnAddusers_Click(object sender, EventArgs e)
@@ -86,6 +93,12 @@ namespace CrimeHotspotSystem.Forms
             pnlNav.Top = btnAddusers.Top;
             pnlNav.Left = btnAddusers.Left;
             btnAddusers.BackColor = Color.FromArgb(46, 51, 73);
+
+            this.PnlFormLoader.Controls.Clear();
+            frmAddusers frmAddusers_vrb = new frmAddusers() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            frmAddusers_vrb.FormBorderStyle = FormBorderStyle.None;
+            this.PnlFormLoader.Controls.Add(frmAddusers_vrb);
+            frmAddusers_vrb.Show();
         }
 
         private void btnProfile_Click(object sender, EventArgs e)
@@ -94,6 +107,12 @@ namespace CrimeHotspotSystem.Forms
             pnlNav.Top = btnProfile.Top;
             pnlNav.Left = btnProfile.Left;
             btnProfile.BackColor = Color.FromArgb(46, 51, 73);
+
+            this.PnlFormLoader.Controls.Clear();
+            frmProfile frmProfile_vrb = new frmProfile() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            frmProfile_vrb.FormBorderStyle = FormBorderStyle.None;
+            this.PnlFormLoader.Controls.Add(frmProfile_vrb);
+            frmProfile_vrb.Show();
         }
 
         private void btnDashboard_Leave(object sender, EventArgs e)
@@ -106,10 +125,7 @@ namespace CrimeHotspotSystem.Forms
             btnAddCrime.BackColor = Color.FromArgb(24, 30, 54);
         }
 
-        private void btnHeatmap_Leave(object sender, EventArgs e)
-        {
-           btnHeatmap.BackColor = Color.FromArgb(24, 30, 54);
-        }
+        
 
         private void btnReport_Leave(object sender, EventArgs e)
         {

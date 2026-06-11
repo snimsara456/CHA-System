@@ -8,18 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CrimeHotspotSystem.Forms.Dashboard_items
+namespace CrimeHotspotSystem.Forms.ReportFormItems
 {
-    public partial class frmAddusers : Form
+    public partial class UserDetails : Form
     {
-        public frmAddusers()
+        public UserDetails()
         {
             InitializeComponent();
         }
 
-        private void label19_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)
         {
-
+            AdminDashboard dashboardadmin = new AdminDashboard();
+            dashboardadmin.Show();
+            this.Hide();
         }
     }
 }

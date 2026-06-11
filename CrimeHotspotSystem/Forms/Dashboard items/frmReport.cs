@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CrimeHotspotSystem.Forms.ReportFormItems;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,30 @@ namespace CrimeHotspotSystem.Forms.Dashboard_items
         public frmReport()
         {
             InitializeComponent();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            UserDetails userdetails = new UserDetails();
+            userdetails.Show();
+            this.Hide();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            CrimeDetails crimedetails = new CrimeDetails();
+            crimedetails.Show();
+            this.Hide();
         }
     }
 }

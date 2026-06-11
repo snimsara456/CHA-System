@@ -12,3 +12,9 @@ C:\Users\gs\Documents\c# practise\CrimeHotspotSystem\CrimeHotspotSystem\obj\Debu
 C:\Users\gs\Documents\c# practise\CrimeHotspotSystem\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.pdb
 C:\Users\gs\Documents\c# practise\CrimeHotspotSystem\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.AdminDashboard.resources
 C:\Users\gs\Documents\c# practise\CrimeHotspotSystem\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.Dashboard_items.frmDashboard.resources
+C:\Users\gs\Documents\c# practise\CrimeHotspotSystem\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.Dashboard_items.frmAddCrimes.resources
+C:\Users\gs\Documents\c# practise\CrimeHotspotSystem\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.Dashboard_items.frmAddusers.resources
+C:\Users\gs\Documents\c# practise\CrimeHotspotSystem\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.Dashboard_items.frmProfile.resources
+C:\Users\gs\Documents\c# practise\CrimeHotspotSystem\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.Dashboard_items.frmReport.resources
+C:\Users\gs\Documents\c# practise\CrimeHotspotSystem\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.ReportFormItems.CrimeDetails.resources
+C:\Users\gs\Documents\c# practise\CrimeHotspotSystem\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.ReportFormItems.UserDetails.resources

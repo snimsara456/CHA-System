@@ -52,6 +52,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CLMcrimetype,
@@ -71,35 +72,30 @@
             this.CLMcrimetype.HeaderText = "CRIME TYPE";
             this.CLMcrimetype.MinimumWidth = 6;
             this.CLMcrimetype.Name = "CLMcrimetype";
-            this.CLMcrimetype.Width = 125;
             // 
             // CLMarea
             // 
             this.CLMarea.HeaderText = "AREA";
             this.CLMarea.MinimumWidth = 6;
             this.CLMarea.Name = "CLMarea";
-            this.CLMarea.Width = 125;
             // 
             // CLMdate
             // 
             this.CLMdate.HeaderText = "DATE";
             this.CLMdate.MinimumWidth = 6;
             this.CLMdate.Name = "CLMdate";
-            this.CLMdate.Width = 125;
             // 
             // CLMsvrt
             // 
             this.CLMsvrt.HeaderText = "SEVERITY";
             this.CLMsvrt.MinimumWidth = 6;
             this.CLMsvrt.Name = "CLMsvrt";
-            this.CLMsvrt.Width = 125;
             // 
             // CLMofficer
             // 
             this.CLMofficer.HeaderText = "OFFICER";
             this.CLMofficer.MinimumWidth = 6;
             this.CLMofficer.Name = "CLMofficer";
-            this.CLMofficer.Width = 125;
             // 
             // label8
             // 

@@ -34,13 +34,12 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnAddusers = new System.Windows.Forms.Button();
             this.btnReport = new System.Windows.Forms.Button();
-            this.btnHeatmap = new System.Windows.Forms.Button();
             this.btnAddCrime = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.PnlFormLoader = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.PnlFormLoader = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -54,7 +53,6 @@
             this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.btnAddusers);
             this.panel1.Controls.Add(this.btnReport);
-            this.panel1.Controls.Add(this.btnHeatmap);
             this.panel1.Controls.Add(this.btnAddCrime);
             this.panel1.Controls.Add(this.btnDashboard);
             this.panel1.Controls.Add(this.panel2);
@@ -79,7 +77,7 @@
             this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProfile.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnProfile.Location = new System.Drawing.Point(0, 450);
+            this.btnProfile.Location = new System.Drawing.Point(0, 399);
             this.btnProfile.Name = "btnProfile";
             this.btnProfile.Size = new System.Drawing.Size(265, 51);
             this.btnProfile.TabIndex = 7;
@@ -109,7 +107,7 @@
             this.btnAddusers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddusers.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddusers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnAddusers.Location = new System.Drawing.Point(0, 399);
+            this.btnAddusers.Location = new System.Drawing.Point(0, 348);
             this.btnAddusers.Name = "btnAddusers";
             this.btnAddusers.Size = new System.Drawing.Size(265, 51);
             this.btnAddusers.TabIndex = 5;
@@ -125,7 +123,7 @@
             this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReport.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnReport.Location = new System.Drawing.Point(0, 348);
+            this.btnReport.Location = new System.Drawing.Point(0, 297);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(265, 51);
             this.btnReport.TabIndex = 4;
@@ -133,22 +131,6 @@
             this.btnReport.UseVisualStyleBackColor = true;
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             this.btnReport.Leave += new System.EventHandler(this.btnReport_Leave);
-            // 
-            // btnHeatmap
-            // 
-            this.btnHeatmap.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnHeatmap.FlatAppearance.BorderSize = 0;
-            this.btnHeatmap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHeatmap.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHeatmap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnHeatmap.Location = new System.Drawing.Point(0, 297);
-            this.btnHeatmap.Name = "btnHeatmap";
-            this.btnHeatmap.Size = new System.Drawing.Size(265, 51);
-            this.btnHeatmap.TabIndex = 3;
-            this.btnHeatmap.Text = "Heatmap";
-            this.btnHeatmap.UseVisualStyleBackColor = true;
-            this.btnHeatmap.Click += new System.EventHandler(this.btnHeatmap_Click);
-            this.btnHeatmap.Leave += new System.EventHandler(this.btnHeatmap_Leave);
             // 
             // btnAddCrime
             // 
@@ -204,14 +186,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "ADMIN";
             // 
-            // PnlFormLoader
-            // 
-            this.PnlFormLoader.Location = new System.Drawing.Point(271, 56);
-            this.PnlFormLoader.Name = "PnlFormLoader";
-            this.PnlFormLoader.Size = new System.Drawing.Size(1100, 689);
-            this.PnlFormLoader.TabIndex = 1;
-            this.PnlFormLoader.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlFormLoader_Paint);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::CrimeHotspotSystem.Properties.Resources.user_244;
@@ -222,6 +196,14 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // PnlFormLoader
+            // 
+            this.PnlFormLoader.Location = new System.Drawing.Point(271, 56);
+            this.PnlFormLoader.Name = "PnlFormLoader";
+            this.PnlFormLoader.Size = new System.Drawing.Size(1100, 689);
+            this.PnlFormLoader.TabIndex = 1;
+            this.PnlFormLoader.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlFormLoader_Paint);
+            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -231,7 +213,6 @@
             this.Controls.Add(this.PnlFormLoader);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.Black;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -251,7 +232,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnHeatmap;
         private System.Windows.Forms.Button btnAddCrime;
         private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.Button btnLogout;
