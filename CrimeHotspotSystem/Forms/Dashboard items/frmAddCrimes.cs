@@ -58,7 +58,7 @@ namespace CrimeHotspotSystem.Forms.Dashboard_items
             else if (radioCritical.Checked) severity = "Critical";
 
             // 3. Database Connection and Insert Logic
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""H:\BICT\sem 3\VAP\Project\CHA-System-Dev-Akalka\CHA-System-Dev-Akalka\CrimeHotspotSystem\CrimeDB.mdf"";Integrated Security=True";
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""H:\BICT\sem 3\VAP\Project\CHA-System-main\CHA-System-main\CrimeHotspotSystem\CrimeDB.mdf"";Integrated Security=True";
 
             string query = @"INSERT INTO [dbo].[Crimes] 
                      (CrimeID, Type, Date, Severity, District, Division, Street) 
@@ -116,7 +116,7 @@ namespace CrimeHotspotSystem.Forms.Dashboard_items
         private void button1_Click(object sender, EventArgs e)
         {
             // 1. Clear all text boxes
-            txtType.Clear();
+            //txtType.Clear();
             txtID.Clear();
             txtDistict.Clear(); // Using your exact control name
             txtDevision.Clear(); // Using your exact control name

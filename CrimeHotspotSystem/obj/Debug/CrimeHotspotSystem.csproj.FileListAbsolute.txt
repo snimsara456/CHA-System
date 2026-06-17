@@ -40,3 +40,69 @@ H:\BICT\sem 3\VAP\Project\CHA-System-Dev-Akalka\CHA-System-Dev-Akalka\CrimeHotsp
 H:\BICT\sem 3\VAP\Project\CHA-System-Dev-Akalka\CHA-System-Dev-Akalka\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.pdb
 H:\BICT\sem 3\VAP\Project\CHA-System-Dev-Akalka\CHA-System-Dev-Akalka\CrimeHotspotSystem\bin\Debug\CrimeDB.mdf
 H:\BICT\sem 3\VAP\Project\CHA-System-Dev-Akalka\CHA-System-Dev-Akalka\CrimeHotspotSystem\bin\Debug\CrimeDB_log.ldf
+C:\Users\nirma\Downloads\CHA-System-Dev-Sasindu\CHA-System-Dev-Sasindu\CrimeHotspotSystem\bin\Debug\CrimeDB.mdf
+C:\Users\nirma\Downloads\CHA-System-Dev-Sasindu\CHA-System-Dev-Sasindu\CrimeHotspotSystem\bin\Debug\CrimeDB_log.ldf
+C:\Users\nirma\Downloads\CHA-System-Dev-Sasindu\CHA-System-Dev-Sasindu\CrimeHotspotSystem\bin\Debug\CrimeHotspotSystem.exe.config
+C:\Users\nirma\Downloads\CHA-System-Dev-Sasindu\CHA-System-Dev-Sasindu\CrimeHotspotSystem\bin\Debug\CrimeHotspotSystem.exe
+C:\Users\nirma\Downloads\CHA-System-Dev-Sasindu\CHA-System-Dev-Sasindu\CrimeHotspotSystem\bin\Debug\CrimeHotspotSystem.pdb
+C:\Users\nirma\Downloads\CHA-System-Dev-Sasindu\CHA-System-Dev-Sasindu\CrimeHotspotSystem\bin\Debug\System.Data.SQLite.dll
+C:\Users\nirma\Downloads\CHA-System-Dev-Sasindu\CHA-System-Dev-Sasindu\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.csproj.AssemblyReference.cache
+C:\Users\nirma\Downloads\CHA-System-Dev-Sasindu\CHA-System-Dev-Sasindu\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.AdminDashboard.resources
+C:\Users\nirma\Downloads\CHA-System-Dev-Sasindu\CHA-System-Dev-Sasindu\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.Dashboard_items.frmAddCrimes.resources
+C:\Users\nirma\Downloads\CHA-System-Dev-Sasindu\CHA-System-Dev-Sasindu\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.Dashboard_items.frmAddusers.resources
+C:\Users\nirma\Downloads\CHA-System-Dev-Sasindu\CHA-System-Dev-Sasindu\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.Dashboard_items.frmDashboard.resources
+C:\Users\nirma\Downloads\CHA-System-Dev-Sasindu\CHA-System-Dev-Sasindu\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.Dashboard_items.frmProfile.resources
+C:\Users\nirma\Downloads\CHA-System-Dev-Sasindu\CHA-System-Dev-Sasindu\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.Dashboard_items.frmReport.resources
+C:\Users\nirma\Downloads\CHA-System-Dev-Sasindu\CHA-System-Dev-Sasindu\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.LoginForm.resources
+C:\Users\nirma\Downloads\CHA-System-Dev-Sasindu\CHA-System-Dev-Sasindu\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.ReportFormItems.CrimeDetails.resources
+C:\Users\nirma\Downloads\CHA-System-Dev-Sasindu\CHA-System-Dev-Sasindu\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.ReportFormItems.UserDetails.resources
+C:\Users\nirma\Downloads\CHA-System-Dev-Sasindu\CHA-System-Dev-Sasindu\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Properties.Resources.resources
+C:\Users\nirma\Downloads\CHA-System-Dev-Sasindu\CHA-System-Dev-Sasindu\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.csproj.GenerateResource.cache
+C:\Users\nirma\Downloads\CHA-System-Dev-Sasindu\CHA-System-Dev-Sasindu\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.csproj.CoreCompileInputs.cache
+C:\Users\nirma\Downloads\CHA-System-Dev-Sasindu\CHA-System-Dev-Sasindu\CrimeHotspotSystem\obj\Debug\CrimeHot.E0CA7A80.Up2Date
+C:\Users\nirma\Downloads\CHA-System-Dev-Sasindu\CHA-System-Dev-Sasindu\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.exe
+C:\Users\nirma\Downloads\CHA-System-Dev-Sasindu\CHA-System-Dev-Sasindu\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.pdb
+C:\Users\Kavix haresh\Downloads\CHA-System-Dev-Nirmal\CHA-System-Dev-Nirmal\CrimeHotspotSystem\bin\Debug\CrimeDB.mdf
+C:\Users\Kavix haresh\Downloads\CHA-System-Dev-Nirmal\CHA-System-Dev-Nirmal\CrimeHotspotSystem\bin\Debug\CrimeDB_log.ldf
+C:\Users\Kavix haresh\Downloads\CHA-System-Dev-Nirmal\CHA-System-Dev-Nirmal\CrimeHotspotSystem\bin\Debug\CrimeHotspotSystem.exe.config
+C:\Users\Kavix haresh\Downloads\CHA-System-Dev-Nirmal\CHA-System-Dev-Nirmal\CrimeHotspotSystem\bin\Debug\CrimeHotspotSystem.exe
+C:\Users\Kavix haresh\Downloads\CHA-System-Dev-Nirmal\CHA-System-Dev-Nirmal\CrimeHotspotSystem\bin\Debug\CrimeHotspotSystem.pdb
+C:\Users\Kavix haresh\Downloads\CHA-System-Dev-Nirmal\CHA-System-Dev-Nirmal\CrimeHotspotSystem\bin\Debug\System.Data.SQLite.dll
+C:\Users\Kavix haresh\Downloads\CHA-System-Dev-Nirmal\CHA-System-Dev-Nirmal\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.csproj.AssemblyReference.cache
+C:\Users\Kavix haresh\Downloads\CHA-System-Dev-Nirmal\CHA-System-Dev-Nirmal\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.AdminDashboard.resources
+C:\Users\Kavix haresh\Downloads\CHA-System-Dev-Nirmal\CHA-System-Dev-Nirmal\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.Dashboard_items.frmAddCrimes.resources
+C:\Users\Kavix haresh\Downloads\CHA-System-Dev-Nirmal\CHA-System-Dev-Nirmal\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.Dashboard_items.frmAddusers.resources
+C:\Users\Kavix haresh\Downloads\CHA-System-Dev-Nirmal\CHA-System-Dev-Nirmal\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.Dashboard_items.frmDashboard.resources
+C:\Users\Kavix haresh\Downloads\CHA-System-Dev-Nirmal\CHA-System-Dev-Nirmal\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.Dashboard_items.frmProfile.resources
+C:\Users\Kavix haresh\Downloads\CHA-System-Dev-Nirmal\CHA-System-Dev-Nirmal\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.Dashboard_items.frmReport.resources
+C:\Users\Kavix haresh\Downloads\CHA-System-Dev-Nirmal\CHA-System-Dev-Nirmal\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.LoginForm.resources
+C:\Users\Kavix haresh\Downloads\CHA-System-Dev-Nirmal\CHA-System-Dev-Nirmal\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.ReportFormItems.CrimeDetails.resources
+C:\Users\Kavix haresh\Downloads\CHA-System-Dev-Nirmal\CHA-System-Dev-Nirmal\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.ReportFormItems.UserDetails.resources
+C:\Users\Kavix haresh\Downloads\CHA-System-Dev-Nirmal\CHA-System-Dev-Nirmal\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Properties.Resources.resources
+C:\Users\Kavix haresh\Downloads\CHA-System-Dev-Nirmal\CHA-System-Dev-Nirmal\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.csproj.GenerateResource.cache
+C:\Users\Kavix haresh\Downloads\CHA-System-Dev-Nirmal\CHA-System-Dev-Nirmal\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.csproj.CoreCompileInputs.cache
+C:\Users\Kavix haresh\Downloads\CHA-System-Dev-Nirmal\CHA-System-Dev-Nirmal\CrimeHotspotSystem\obj\Debug\CrimeHot.E0CA7A80.Up2Date
+C:\Users\Kavix haresh\Downloads\CHA-System-Dev-Nirmal\CHA-System-Dev-Nirmal\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.exe
+C:\Users\Kavix haresh\Downloads\CHA-System-Dev-Nirmal\CHA-System-Dev-Nirmal\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.pdb
+H:\BICT\sem 3\VAP\Project\CHA-System-main\CHA-System-main\CrimeHotspotSystem\bin\Debug\CrimeDB.mdf
+H:\BICT\sem 3\VAP\Project\CHA-System-main\CHA-System-main\CrimeHotspotSystem\bin\Debug\CrimeDB_log.ldf
+H:\BICT\sem 3\VAP\Project\CHA-System-main\CHA-System-main\CrimeHotspotSystem\bin\Debug\CrimeHotspotSystem.exe.config
+H:\BICT\sem 3\VAP\Project\CHA-System-main\CHA-System-main\CrimeHotspotSystem\bin\Debug\CrimeHotspotSystem.exe
+H:\BICT\sem 3\VAP\Project\CHA-System-main\CHA-System-main\CrimeHotspotSystem\bin\Debug\CrimeHotspotSystem.pdb
+H:\BICT\sem 3\VAP\Project\CHA-System-main\CHA-System-main\CrimeHotspotSystem\bin\Debug\System.Data.SQLite.dll
+H:\BICT\sem 3\VAP\Project\CHA-System-main\CHA-System-main\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.csproj.AssemblyReference.cache
+H:\BICT\sem 3\VAP\Project\CHA-System-main\CHA-System-main\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.AdminDashboard.resources
+H:\BICT\sem 3\VAP\Project\CHA-System-main\CHA-System-main\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.Dashboard_items.frmAddCrimes.resources
+H:\BICT\sem 3\VAP\Project\CHA-System-main\CHA-System-main\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.Dashboard_items.frmAddusers.resources
+H:\BICT\sem 3\VAP\Project\CHA-System-main\CHA-System-main\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.Dashboard_items.frmDashboard.resources
+H:\BICT\sem 3\VAP\Project\CHA-System-main\CHA-System-main\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.Dashboard_items.frmProfile.resources
+H:\BICT\sem 3\VAP\Project\CHA-System-main\CHA-System-main\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.Dashboard_items.frmReport.resources
+H:\BICT\sem 3\VAP\Project\CHA-System-main\CHA-System-main\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.LoginForm.resources
+H:\BICT\sem 3\VAP\Project\CHA-System-main\CHA-System-main\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.ReportFormItems.CrimeDetails.resources
+H:\BICT\sem 3\VAP\Project\CHA-System-main\CHA-System-main\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.ReportFormItems.UserDetails.resources
+H:\BICT\sem 3\VAP\Project\CHA-System-main\CHA-System-main\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Properties.Resources.resources
+H:\BICT\sem 3\VAP\Project\CHA-System-main\CHA-System-main\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.csproj.GenerateResource.cache
+H:\BICT\sem 3\VAP\Project\CHA-System-main\CHA-System-main\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.csproj.CoreCompileInputs.cache
+H:\BICT\sem 3\VAP\Project\CHA-System-main\CHA-System-main\CrimeHotspotSystem\obj\Debug\CrimeHot.E0CA7A80.Up2Date
+H:\BICT\sem 3\VAP\Project\CHA-System-main\CHA-System-main\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.exe
+H:\BICT\sem 3\VAP\Project\CHA-System-main\CHA-System-main\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.pdb
