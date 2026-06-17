@@ -37,7 +37,7 @@
             this.btnAddCrime = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblUserName = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PnlFormLoader = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
@@ -58,16 +58,18 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(265, 746);
+            this.panel1.Size = new System.Drawing.Size(199, 606);
             this.panel1.TabIndex = 0;
             // 
             // pnlNav
             // 
             this.pnlNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.pnlNav.Location = new System.Drawing.Point(0, 193);
+            this.pnlNav.Location = new System.Drawing.Point(0, 157);
+            this.pnlNav.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlNav.Name = "pnlNav";
-            this.pnlNav.Size = new System.Drawing.Size(3, 100);
+            this.pnlNav.Size = new System.Drawing.Size(2, 81);
             this.pnlNav.TabIndex = 8;
             // 
             // btnProfile
@@ -77,9 +79,10 @@
             this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProfile.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnProfile.Location = new System.Drawing.Point(0, 399);
+            this.btnProfile.Location = new System.Drawing.Point(0, 322);
+            this.btnProfile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Size = new System.Drawing.Size(265, 51);
+            this.btnProfile.Size = new System.Drawing.Size(199, 41);
             this.btnProfile.TabIndex = 7;
             this.btnProfile.Text = "Profile";
             this.btnProfile.UseVisualStyleBackColor = true;
@@ -93,9 +96,10 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.Red;
-            this.btnLogout.Location = new System.Drawing.Point(0, 695);
+            this.btnLogout.Location = new System.Drawing.Point(0, 565);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(265, 51);
+            this.btnLogout.Size = new System.Drawing.Size(199, 41);
             this.btnLogout.TabIndex = 6;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = true;
@@ -108,9 +112,10 @@
             this.btnAddusers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddusers.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddusers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnAddusers.Location = new System.Drawing.Point(0, 348);
+            this.btnAddusers.Location = new System.Drawing.Point(0, 281);
+            this.btnAddusers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAddusers.Name = "btnAddusers";
-            this.btnAddusers.Size = new System.Drawing.Size(265, 51);
+            this.btnAddusers.Size = new System.Drawing.Size(199, 41);
             this.btnAddusers.TabIndex = 5;
             this.btnAddusers.Text = "Add Users";
             this.btnAddusers.UseVisualStyleBackColor = true;
@@ -124,9 +129,10 @@
             this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReport.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnReport.Location = new System.Drawing.Point(0, 297);
+            this.btnReport.Location = new System.Drawing.Point(0, 240);
+            this.btnReport.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(265, 51);
+            this.btnReport.Size = new System.Drawing.Size(199, 41);
             this.btnReport.TabIndex = 4;
             this.btnReport.Text = "Report";
             this.btnReport.UseVisualStyleBackColor = true;
@@ -140,9 +146,10 @@
             this.btnAddCrime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddCrime.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddCrime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnAddCrime.Location = new System.Drawing.Point(0, 246);
+            this.btnAddCrime.Location = new System.Drawing.Point(0, 199);
+            this.btnAddCrime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAddCrime.Name = "btnAddCrime";
-            this.btnAddCrime.Size = new System.Drawing.Size(265, 51);
+            this.btnAddCrime.Size = new System.Drawing.Size(199, 41);
             this.btnAddCrime.TabIndex = 2;
             this.btnAddCrime.Text = "Add Crime";
             this.btnAddCrime.UseVisualStyleBackColor = true;
@@ -156,9 +163,10 @@
             this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDashboard.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnDashboard.Location = new System.Drawing.Point(0, 195);
+            this.btnDashboard.Location = new System.Drawing.Point(0, 158);
+            this.btnDashboard.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(265, 51);
+            this.btnDashboard.Size = new System.Drawing.Size(199, 41);
             this.btnDashboard.TabIndex = 1;
             this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.UseVisualStyleBackColor = true;
@@ -168,52 +176,57 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.lblUserName);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(265, 195);
+            this.panel2.Size = new System.Drawing.Size(199, 158);
             this.panel2.TabIndex = 0;
             // 
-            // label1
+            // lblUserName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(93, 124);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "ADMIN";
+            this.lblUserName.AutoSize = true;
+            this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lblUserName.Location = new System.Drawing.Point(70, 101);
+            this.lblUserName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Size = new System.Drawing.Size(56, 17);
+            this.lblUserName.TabIndex = 1;
+            this.lblUserName.Text = "ADMIN";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::CrimeHotspotSystem.Properties.Resources.user_244;
-            this.pictureBox1.Location = new System.Drawing.Point(73, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(55, 10);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(107, 109);
+            this.pictureBox1.Size = new System.Drawing.Size(80, 89);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // PnlFormLoader
             // 
-            this.PnlFormLoader.Location = new System.Drawing.Point(271, 56);
+            this.PnlFormLoader.Location = new System.Drawing.Point(203, 46);
+            this.PnlFormLoader.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PnlFormLoader.Name = "PnlFormLoader";
-            this.PnlFormLoader.Size = new System.Drawing.Size(1100, 689);
+            this.PnlFormLoader.Size = new System.Drawing.Size(825, 560);
             this.PnlFormLoader.TabIndex = 1;
             this.PnlFormLoader.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlFormLoader_Paint);
             // 
             // AdminDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(1370, 746);
+            this.ClientSize = new System.Drawing.Size(1028, 606);
             this.Controls.Add(this.PnlFormLoader);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.Black;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AdminDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -232,7 +245,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnDashboard;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Button btnAddCrime;
         private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.Button btnLogout;

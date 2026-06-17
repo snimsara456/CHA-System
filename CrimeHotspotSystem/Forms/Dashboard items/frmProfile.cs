@@ -32,7 +32,7 @@ namespace CrimeHotspotSystem.Forms.Dashboard_items
 
 
         // 1. Connection string defined as a class field
-        private string connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\Kavix haresh\Downloads\CHA-System-Dev-Nirmal\CHA-System-Dev-Nirmal\CrimeHotspotSystem\CrimeDB.mdf"";Integrated Security=True";
+        private string connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""H:\BICT\sem 3\VAP\Project\CHA-System-main\CHA-System-main\CrimeHotspotSystem\CrimeDB.mdf"";Integrated Security=True";
 
         
 

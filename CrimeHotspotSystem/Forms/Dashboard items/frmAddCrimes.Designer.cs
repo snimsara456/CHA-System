@@ -42,15 +42,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtDevision = new System.Windows.Forms.TextBox();
+            this.txtDistict = new System.Windows.Forms.TextBox();
             this.txtLocation = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
-            this.txtType = new System.Windows.Forms.TextBox();
-            this.txtDistict = new System.Windows.Forms.TextBox();
-            this.txtDevision = new System.Windows.Forms.TextBox();
+            this.txtType = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -80,8 +80,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.txtType);
             this.groupBox1.Controls.Add(this.radioCritical);
+            this.groupBox1.Controls.Add(this.txtType);
             this.groupBox1.Controls.Add(this.radioHigh);
             this.groupBox1.Controls.Add(this.radioMedium);
             this.groupBox1.Controls.Add(this.radioLow);
@@ -92,9 +92,9 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(20, 47);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(377, 226);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
@@ -105,7 +105,7 @@
             // 
             this.radioCritical.AutoSize = true;
             this.radioCritical.Location = new System.Drawing.Point(118, 193);
-            this.radioCritical.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioCritical.Margin = new System.Windows.Forms.Padding(2);
             this.radioCritical.Name = "radioCritical";
             this.radioCritical.Size = new System.Drawing.Size(55, 17);
             this.radioCritical.TabIndex = 10;
@@ -117,7 +117,7 @@
             // 
             this.radioHigh.AutoSize = true;
             this.radioHigh.Location = new System.Drawing.Point(118, 171);
-            this.radioHigh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioHigh.Margin = new System.Windows.Forms.Padding(2);
             this.radioHigh.Name = "radioHigh";
             this.radioHigh.Size = new System.Drawing.Size(45, 17);
             this.radioHigh.TabIndex = 9;
@@ -129,7 +129,7 @@
             // 
             this.radioMedium.AutoSize = true;
             this.radioMedium.Location = new System.Drawing.Point(118, 150);
-            this.radioMedium.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioMedium.Margin = new System.Windows.Forms.Padding(2);
             this.radioMedium.Name = "radioMedium";
             this.radioMedium.Size = new System.Drawing.Size(61, 17);
             this.radioMedium.TabIndex = 8;
@@ -141,7 +141,7 @@
             // 
             this.radioLow.AutoSize = true;
             this.radioLow.Location = new System.Drawing.Point(118, 129);
-            this.radioLow.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioLow.Margin = new System.Windows.Forms.Padding(2);
             this.radioLow.Name = "radioLow";
             this.radioLow.Size = new System.Drawing.Size(41, 17);
             this.radioLow.TabIndex = 7;
@@ -152,7 +152,7 @@
             // txtID
             // 
             this.txtID.Location = new System.Drawing.Point(118, 61);
-            this.txtID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtID.Margin = new System.Windows.Forms.Padding(2);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(174, 20);
             this.txtID.TabIndex = 6;
@@ -160,7 +160,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(118, 96);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(174, 20);
             this.dateTimePicker1.TabIndex = 4;
@@ -215,18 +215,32 @@
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Location = new System.Drawing.Point(412, 47);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(404, 226);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "LOCATION DETAILS";
             // 
+            // txtDevision
+            // 
+            this.txtDevision.Location = new System.Drawing.Point(141, 48);
+            this.txtDevision.Name = "txtDevision";
+            this.txtDevision.Size = new System.Drawing.Size(120, 20);
+            this.txtDevision.TabIndex = 11;
+            // 
+            // txtDistict
+            // 
+            this.txtDistict.Location = new System.Drawing.Point(5, 48);
+            this.txtDistict.Name = "txtDistict";
+            this.txtDistict.Size = new System.Drawing.Size(120, 20);
+            this.txtDistict.TabIndex = 10;
+            // 
             // txtLocation
             // 
             this.txtLocation.Location = new System.Drawing.Point(275, 47);
-            this.txtLocation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLocation.Margin = new System.Windows.Forms.Padding(2);
             this.txtLocation.Name = "txtLocation";
             this.txtLocation.Size = new System.Drawing.Size(117, 20);
             this.txtLocation.TabIndex = 8;
@@ -264,7 +278,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(438, 476);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(87, 31);
             this.button1.TabIndex = 6;
@@ -275,7 +289,7 @@
             // btnSubmit
             // 
             this.btnSubmit.Location = new System.Drawing.Point(542, 476);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(87, 31);
             this.btnSubmit.TabIndex = 7;
@@ -285,24 +299,20 @@
             // 
             // txtType
             // 
+            this.txtType.FormattingEnabled = true;
+            this.txtType.Items.AddRange(new object[] {
+            "Murder",
+            "Assault",
+            "Robbery",
+            "Kidnapping",
+            "Fraud",
+            "DUI",
+            "Drug Possesion",
+            "Trespassing"});
             this.txtType.Location = new System.Drawing.Point(118, 29);
             this.txtType.Name = "txtType";
-            this.txtType.Size = new System.Drawing.Size(174, 20);
-            this.txtType.TabIndex = 11;
-            // 
-            // txtDistict
-            // 
-            this.txtDistict.Location = new System.Drawing.Point(5, 48);
-            this.txtDistict.Name = "txtDistict";
-            this.txtDistict.Size = new System.Drawing.Size(120, 20);
-            this.txtDistict.TabIndex = 10;
-            // 
-            // txtDevision
-            // 
-            this.txtDevision.Location = new System.Drawing.Point(141, 48);
-            this.txtDevision.Name = "txtDevision";
-            this.txtDevision.Size = new System.Drawing.Size(120, 20);
-            this.txtDevision.TabIndex = 11;
+            this.txtType.Size = new System.Drawing.Size(174, 21);
+            this.txtType.TabIndex = 9;
             // 
             // frmAddCrimes
             // 
@@ -317,7 +327,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmAddCrimes";
             this.Text = "frmAddCrimes";
             this.Load += new System.EventHandler(this.frmAddCrimes_Load);
@@ -352,8 +362,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.TextBox txtType;
         private System.Windows.Forms.TextBox txtDevision;
         private System.Windows.Forms.TextBox txtDistict;
+        private System.Windows.Forms.ComboBox txtType;
     }
 }

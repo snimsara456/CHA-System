@@ -20,7 +20,7 @@ namespace CrimeHotspotSystem
         private void btnLogin_Click(object sender, EventArgs e)
         {
             // TODO: Replace this with your actual database connection string
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\Kavix haresh\Downloads\CHA-System-Dev-Nirmal\CHA-System-Dev-Nirmal\CrimeHotspotSystem\CrimeDB.mdf"";Integrated Security=True";
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""H:\BICT\sem 3\VAP\Project\CHA-System-main\CHA-System-main\CrimeHotspotSystem\CrimeDB.mdf"";Integrated Security=True";
 
             if (string.IsNullOrEmpty(txtUsername.Text) || string.IsNullOrEmpty(txtPassword.Text))
             {
@@ -46,6 +46,13 @@ namespace CrimeHotspotSystem
                         {
                             MessageBox.Show("Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             GlobalVariables.LoggedInUserID = txtUsername.Text.Trim().ToString();
+
+                            using (SqlCommand roleCommand = new SqlCommand("SELECT Role FROM Users WHERE Username = @username", connection))
+                            {
+                                roleCommand.Parameters.AddWithValue("@username", GlobalVariables.LoggedInUserID);
+                                GlobalVariables.userRole = roleCommand.ExecuteScalar()?.ToString();
+                            }
+                            Console.WriteLine(GlobalVariables.userRole);
                             Console.WriteLine(GlobalVariables.LoggedInUserID);
                             AdminDashboard dashboard = new AdminDashboard();
                             dashboard.Show();

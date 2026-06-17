@@ -34,7 +34,25 @@ namespace CrimeHotspotSystem.Forms
 
         private void AdminDashboard_Load(object sender, EventArgs e)
         {
+            // 1. Update the label with the global username
+            // Adding a fallback string just in case the variable is empty
+            lblUserName.Text = !string.IsNullOrEmpty(GlobalVariables.LoggedInUserID)
+                               ? GlobalVariables.LoggedInUserID
+                               : "Unknown User";
 
+            // 2. Check the global role and deactivate buttons if it is "REGULAR"
+            // Using OrdinalIgnoreCase makes it safe even if the database has "Regular" or "regular"
+            if (string.Equals(GlobalVariables.userRole.Trim(), "REGULAR", StringComparison.OrdinalIgnoreCase))
+            {
+                // Disabling the buttons so they are greyed out and unclickable
+                btnReport.Enabled = false;
+                btnAddusers.Enabled = false;
+
+                // OPTIONAL: If you want to hide them completely instead of just greying them out, 
+                // you can use .Visible = false; instead of .Enabled = false;
+                //btnReport.Visible = false;
+                //btnAddusers.Visible = false;
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

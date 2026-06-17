@@ -30,12 +30,12 @@ namespace CrimeHotspotSystem.Forms.Dashboard_items
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\Kavix haresh\Downloads\CHA-System-Dev-Nirmal\CHA-System-Dev-Nirmal\CrimeHotspotSystem\CrimeDB.mdf"";Integrated Security=True";
+            string connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""H:\BICT\sem 3\VAP\Project\CHA-System-main\CHA-System-main\CrimeHotspotSystem\CrimeDB.mdf"";Integrated Security=True";
 
             string gender = rbMale.Checked ? "Male" : (rbFemale.Checked ? "Female" : "");
 
-            string query = "INSERT INTO Users (FullName, NameWithInitials, PoliceID, NIC, DOB, Gender, Address, Phone, Rank, PoliceStation, Department, DateJoined, Username, Password) " +
-                           "VALUES (@FullName, @NameWithInitials, @PoliceID, @NIC, @DOB, @Gender, @Address, @Phone, @Rank, @PoliceStation, @Department, @DateJoined, @Username, @Password)";
+            string query = "INSERT INTO Users (FullName, NameWithInitials, PoliceID, NIC, DOB, Gender, Address, Phone, Rank, PoliceStation, Department, DateJoined, Username, Password, role) " +
+                           "VALUES (@FullName, @NameWithInitials, @PoliceID, @NIC, @DOB, @Gender, @Address, @Phone, @Rank, @PoliceStation, @Department, @DateJoined, @Username, @Password, @Role)";
 
             using (SqlConnection conn = new SqlConnection(connString))
             {
@@ -59,6 +59,7 @@ namespace CrimeHotspotSystem.Forms.Dashboard_items
                         cmd.Parameters.AddWithValue("@Username", txtUserName.Text);
                         cmd.Parameters.AddWithValue("@Password", txtPassword.Text);
 
+                        cmd.Parameters.AddWithValue("@Role", cmbType.SelectedItem?.ToString() ?? "");
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("User details saved successfully to the database!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -95,6 +96,16 @@ namespace CrimeHotspotSystem.Forms.Dashboard_items
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void frmAddusers_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbType_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
