@@ -40,3 +40,26 @@ H:\BICT\sem 3\VAP\Project\CHA-System-Dev-Akalka\CHA-System-Dev-Akalka\CrimeHotsp
 H:\BICT\sem 3\VAP\Project\CHA-System-Dev-Akalka\CHA-System-Dev-Akalka\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.pdb
 H:\BICT\sem 3\VAP\Project\CHA-System-Dev-Akalka\CHA-System-Dev-Akalka\CrimeHotspotSystem\bin\Debug\CrimeDB.mdf
 H:\BICT\sem 3\VAP\Project\CHA-System-Dev-Akalka\CHA-System-Dev-Akalka\CrimeHotspotSystem\bin\Debug\CrimeDB_log.ldf
+H:\Projects\Kusal\CHA-System\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.exe
+H:\Projects\Kusal\CHA-System\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.pdb
+H:\Projects\Kusal\CHA-System\CrimeHotspotSystem\bin\Debug\CrimeDB.mdf
+H:\Projects\Kusal\CHA-System\CrimeHotspotSystem\bin\Debug\CrimeDB_log.ldf
+H:\Projects\Kusal\CHA-System\CrimeHotspotSystem\bin\Debug\CrimeHotspotSystem.exe.config
+H:\Projects\Kusal\CHA-System\CrimeHotspotSystem\bin\Debug\CrimeHotspotSystem.exe
+H:\Projects\Kusal\CHA-System\CrimeHotspotSystem\bin\Debug\CrimeHotspotSystem.pdb
+H:\Projects\Kusal\CHA-System\CrimeHotspotSystem\bin\Debug\System.Data.SQLite.dll
+H:\Projects\Kusal\CHA-System\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.csproj.AssemblyReference.cache
+H:\Projects\Kusal\CHA-System\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.exe.config
+H:\Projects\Kusal\CHA-System\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.AdminDashboard.resources
+H:\Projects\Kusal\CHA-System\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.Dashboard_items.frmAddCrimes.resources
+H:\Projects\Kusal\CHA-System\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.Dashboard_items.frmAddusers.resources
+H:\Projects\Kusal\CHA-System\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.Dashboard_items.frmDashboard.resources
+H:\Projects\Kusal\CHA-System\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.Dashboard_items.frmProfile.resources
+H:\Projects\Kusal\CHA-System\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.Dashboard_items.frmReport.resources
+H:\Projects\Kusal\CHA-System\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.LoginForm.resources
+H:\Projects\Kusal\CHA-System\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.ReportFormItems.CrimeDetails.resources
+H:\Projects\Kusal\CHA-System\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Forms.ReportFormItems.UserDetails.resources
+H:\Projects\Kusal\CHA-System\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.Properties.Resources.resources
+H:\Projects\Kusal\CHA-System\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.csproj.GenerateResource.cache
+H:\Projects\Kusal\CHA-System\CrimeHotspotSystem\obj\Debug\CrimeHotspotSystem.csproj.CoreCompileInputs.cache
+H:\Projects\Kusal\CHA-System\CrimeHotspotSystem\obj\Debug\CrimeHot.E0CA7A80.Up2Date

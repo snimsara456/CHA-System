@@ -161,5 +161,15 @@ namespace CrimeHotspotSystem.Forms
         {
 
         }
+
+        private void timerDateTime_Tick(object sender, EventArgs e)
+        {
+            lblDateTime.Text = DateTime.Now.ToString("F");
+        }
+
+        private void lblDateTime_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
