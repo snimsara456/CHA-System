@@ -66,7 +66,7 @@ namespace CrimeHotspotSystem.Forms.Dashboard_items
         {
             // Replace "YourDatabaseName" and "YourServerName" with your actual local server details.
             // "Server=localhost" or "Server=." usually works for local default instances.
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""H:\BICT\sem 3\VAP\Project\CHA-System-Dev-Akalka\CHA-System-Dev-Akalka\CrimeHotspotSystem\CrimeDB.mdf"";Integrated Security=True";
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\Kavix haresh\Downloads\CHA-System-Dev-Nirmal\CHA-System-Dev-Nirmal\CrimeHotspotSystem\CrimeDB.mdf"";Integrated Security=True";
 
             // SQL Query to fetch data and sort by Date in descending order
             string query = @"SELECT CrimeID, Type, Date, Severity, District, Division, Street 
@@ -105,7 +105,7 @@ namespace CrimeHotspotSystem.Forms.Dashboard_items
         private void LoadDashboardMetrics()
         {
             // Adjust this connection string if your CrimeDB.mdf is located elsewhere
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""H:\BICT\sem 3\VAP\Project\CHA-System-Dev-Akalka\CHA-System-Dev-Akalka\CrimeHotspotSystem\CrimeDB.mdf"";Integrated Security=True";
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\Kavix haresh\Downloads\CHA-System-Dev-Nirmal\CHA-System-Dev-Nirmal\CrimeHotspotSystem\CrimeDB.mdf"";Integrated Security=True";
 
             // 1. Query for Total Crimes (Counts all rows)
             string queryTotal = "SELECT COUNT(CrimeID) FROM [dbo].[Crimes]";
@@ -155,6 +155,11 @@ namespace CrimeHotspotSystem.Forms.Dashboard_items
         {
             LoadCrimesData();
             LoadDashboardMetrics();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

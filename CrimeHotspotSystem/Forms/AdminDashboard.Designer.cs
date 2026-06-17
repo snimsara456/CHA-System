@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlNav = new System.Windows.Forms.Panel();
             this.btnProfile = new System.Windows.Forms.Button();
@@ -41,8 +40,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PnlFormLoader = new System.Windows.Forms.Panel();
-            this.lblDateTime = new System.Windows.Forms.Label();
-            this.timerDateTime = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -102,6 +99,7 @@
             this.btnLogout.TabIndex = 6;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnAddusers
             // 
@@ -207,32 +205,12 @@
             this.PnlFormLoader.TabIndex = 1;
             this.PnlFormLoader.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlFormLoader_Paint);
             // 
-            // lblDateTime
-            // 
-            this.lblDateTime.AccessibleName = "";
-            this.lblDateTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDateTime.AutoSize = true;
-            this.lblDateTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateTime.Location = new System.Drawing.Point(1004, 12);
-            this.lblDateTime.Name = "lblDateTime";
-            this.lblDateTime.Size = new System.Drawing.Size(104, 18);
-            this.lblDateTime.TabIndex = 2;
-            this.lblDateTime.Text = "date_and_time";
-            this.lblDateTime.Click += new System.EventHandler(this.lblDateTime_Click);
-            // 
-            // timerDateTime
-            // 
-            this.timerDateTime.Enabled = true;
-            this.timerDateTime.Interval = 1000;
-            this.timerDateTime.Tick += new System.EventHandler(this.timerDateTime_Tick);
-            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(1370, 746);
-            this.Controls.Add(this.lblDateTime);
             this.Controls.Add(this.PnlFormLoader);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.Black;
@@ -245,7 +223,6 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -263,7 +240,5 @@
         private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.Panel pnlNav;
         private System.Windows.Forms.Panel PnlFormLoader;
-        private System.Windows.Forms.Label lblDateTime;
-        private System.Windows.Forms.Timer timerDateTime;
     }
 }
