@@ -64,19 +64,18 @@ namespace CrimeHotspotSystem.Forms.Dashboard_items
             // 1. Build Top Metrics Cards
             string[] titles = { "Total Critical Crimes", "Most Common Category", "Most Dangerous Area", "Crimes This Month", "Total Crimes" };
             System.Windows.Forms.Label[] targetLabels = {
-        lblCriticalCount = new System.Windows.Forms.Label(),
-        lblCategoryCount = new System.Windows.Forms.Label(),
-        lblAreaCount = new System.Windows.Forms.Label(),
-        lblMonthCount = new System.Windows.Forms.Label(),
-        lblTotalCount = new System.Windows.Forms.Label()
-    };
+                lblCriticalCount = new System.Windows.Forms.Label(),
+                lblCategoryCount = new System.Windows.Forms.Label(),
+                lblAreaCount = new System.Windows.Forms.Label(),
+                lblMonthCount = new System.Windows.Forms.Label(),
+                lblTotalCount = new System.Windows.Forms.Label()
+            };
 
-            // 🔴 කාඩ් වල පළල සහ පරතරය ඔයාගේ Form එකේ සයිස් එකට සෙට් වෙන්න කුඩා කළා
             int startX = 20;
             int startY = 20;
-            int cardWidth = 145; // කලින් 180 තිබුණේ
+            int cardWidth = 145;
             int cardHeight = 90;
-            int spacing = 15;    // කලින් 20
+            int spacing = 15;
 
             for (int i = 0; i < titles.Length; i++)
             {
@@ -96,7 +95,7 @@ namespace CrimeHotspotSystem.Forms.Dashboard_items
                     AutoSize = false,
                     Size = new Size(cardWidth - 10, 25),
                     Location = new Point(5, 12),
-                    Font = new System.Drawing.Font("Segoe UI", 8.5F, FontStyle.Bold), // අකුරු ටිකක් කුඩා කළා
+                    Font = new System.Drawing.Font("Segoe UI", 8.5F, FontStyle.Bold),
                     ForeColor = Color.FromArgb(127, 140, 141),
                     TextAlign = ContentAlignment.MiddleCenter
                 };
@@ -106,7 +105,7 @@ namespace CrimeHotspotSystem.Forms.Dashboard_items
                 lblCount.AutoSize = false;
                 lblCount.Size = new Size(cardWidth - 10, 40);
                 lblCount.Location = new Point(5, 40);
-                lblCount.Font = new System.Drawing.Font("Segoe UI", 22F, FontStyle.Bold); // නොම්මර සයිස් එක ගැලපුවා
+                lblCount.Font = new System.Drawing.Font("Segoe UI", 22F, FontStyle.Bold);
                 lblCount.ForeColor = Color.FromArgb(41, 128, 185);
                 lblCount.TextAlign = ContentAlignment.MiddleCenter;
 
@@ -128,7 +127,6 @@ namespace CrimeHotspotSystem.Forms.Dashboard_items
             txtSearch = new TextBox { Location = new Point(390, controlY), Size = new Size(150, 25), Font = new System.Drawing.Font("Segoe UI", 10F) };
             txtSearch.TextChanged += TxtSearch_TextChanged;
 
-            // 🔴 Export බටන් වල සයිස් එක සහ ස්ථානය හරියටම ටේබල් එකට උඩින් සෙට් කළා
             Button btnExcel = new Button { Text = "📊 Excel", Location = new Point(560, controlY - 5), Size = new Size(110, 35), BackColor = Color.FromArgb(46, 204, 113), ForeColor = Color.White, FlatStyle = FlatStyle.Flat, Font = new System.Drawing.Font("Segoe UI", 9F, FontStyle.Bold), Cursor = Cursors.Hand };
             btnExcel.FlatAppearance.BorderSize = 0;
             btnExcel.Click += BtnExcel_Click;
@@ -148,7 +146,7 @@ namespace CrimeHotspotSystem.Forms.Dashboard_items
             dgvMain = new DataGridView
             {
                 Location = new Point(20, 180),
-                Size = new Size(770, 450), // 🔴 ටේබල් එකේ පළල Form එකට හරියන්න අඩු කළා
+                Size = new Size(770, 450),
                 Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right,
                 BorderStyle = BorderStyle.None,
                 BackgroundColor = Color.White,
@@ -211,7 +209,9 @@ namespace CrimeHotspotSystem.Forms.Dashboard_items
                     }
 
                     SqlDataAdapter da = new SqlDataAdapter(query, conn);
-                    _currentTable.Clear();
+
+                    // Creates a fresh DataTable so columns don't overlap when switching views
+                    _currentTable = new DataTable();
 
                     // Reset columns to bind fresh data
                     dgvMain.Columns.Clear();
@@ -309,8 +309,7 @@ namespace CrimeHotspotSystem.Forms.Dashboard_items
                 return;
             }
 
-            // 🔴 වෙනස් කළා: කිසිම Package එකක් ඕනේ නැති .csv (Excel File) ක්‍රමයට මාරු කළා
-            using (SaveFileDialog sfd = new SaveFileDialog { Filter = "Excel File|*.csv", FileName = $"Custom_{_currentView}_Report_{DateTime.Now:yyyyMMdd}" })
+            using (SaveFileDialog sfd = new SaveFileDialog { Filter = "CSV File|*.csv", FileName = $"Custom_{_currentView}_Report_{DateTime.Now:yyyyMMdd}" })
             {
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
@@ -318,7 +317,7 @@ namespace CrimeHotspotSystem.Forms.Dashboard_items
                     {
                         System.Text.StringBuilder sb = new System.Text.StringBuilder();
 
-                        // 1. මාතෘකා (Headers) ටික හදමු
+                        // 1. Headers
                         string[] columnNames = new string[dataToExport.Columns.Count];
                         for (int i = 0; i < dataToExport.Columns.Count; i++)
                         {
@@ -326,19 +325,18 @@ namespace CrimeHotspotSystem.Forms.Dashboard_items
                         }
                         sb.AppendLine(string.Join(",", columnNames));
 
-                        // 2. දත්ත (Data) ටික හදමු
+                        // 2. Data Rows
                         foreach (DataRow row in dataToExport.Rows)
                         {
                             string[] fields = new string[dataToExport.Columns.Count];
                             for (int i = 0; i < dataToExport.Columns.Count; i++)
                             {
-                                // Excel එකේ කොටු කැඩෙන්නැති වෙන්න කමා (,) අයින් කරලා හිස් තැනක් දානවා
                                 fields[i] = row[i].ToString().Replace(",", " ");
                             }
                             sb.AppendLine(string.Join(",", fields));
                         }
 
-                        // 3. ෆයිල් එක Save කිරීම (System.IO භාවිතා කර)
+                        // 3. Save
                         System.IO.File.WriteAllText(sfd.FileName, sb.ToString());
 
                         MessageBox.Show($"Selected {_currentView} successfully exported to Excel.", "Export Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
