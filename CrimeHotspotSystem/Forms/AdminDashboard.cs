@@ -13,16 +13,11 @@ using CrimeHotspotSystem.Forms.Dashboard_items;
 namespace CrimeHotspotSystem.Forms
 {
     public partial class AdminDashboard : Form
-
-   
     {
-       
-
-
         public AdminDashboard()
         {
             InitializeComponent();
-           
+
             pnlNav.Height = btnDashboard.Height;
             pnlNav.Top = btnDashboard.Top;
             pnlNav.Left = btnDashboard.Left;
@@ -34,7 +29,7 @@ namespace CrimeHotspotSystem.Forms
             this.PnlFormLoader.Controls.Add(frmDashboard_vrb);
             frmDashboard_vrb.Show();
 
-            
+            this.FormClosing += (sender, e) => { Application.Exit(); };
         }
 
         private void AdminDashboard_Load(object sender, EventArgs e)
@@ -69,9 +64,6 @@ namespace CrimeHotspotSystem.Forms
             this.PnlFormLoader.Controls.Add(frmDashboard_vrb);
             frmDashboard_vrb.Show();
         }
-
-        
-        
 
         private void btnReport_Click(object sender, EventArgs e)
         {
@@ -125,8 +117,6 @@ namespace CrimeHotspotSystem.Forms
             btnAddCrime.BackColor = Color.FromArgb(24, 30, 54);
         }
 
-        
-
         private void btnReport_Leave(object sender, EventArgs e)
         {
             btnReport.BackColor = Color.FromArgb(24, 30, 54);
@@ -162,12 +152,19 @@ namespace CrimeHotspotSystem.Forms
 
         }
 
-        private void timerDateTime_Tick(object sender, EventArgs e)
+        private void btnLogout_Click(object sender, EventArgs e)
         {
-            lblDateTime.Text = DateTime.Now.ToString("F");
+            DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Logout Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                LoginForm login = new LoginForm();
+                login.Show();
+                this.Hide();
+            }
         }
 
-        private void lblDateTime_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
