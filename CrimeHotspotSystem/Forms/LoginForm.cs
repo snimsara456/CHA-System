@@ -20,7 +20,7 @@ namespace CrimeHotspotSystem
         private void btnLogin_Click(object sender, EventArgs e)
         {
             // TODO: Replace this with your actual database connection string
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""H:\BICT\sem 3\VAP\Project\CHA-System-main\CHA-System-main\CrimeHotspotSystem\CrimeDB.mdf"";Integrated Security=True";
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\richa\Downloads\CHA-System-main\CrimeHotspotSystem\CrimeDB.mdf;Integrated Security=True";
 
             if (string.IsNullOrEmpty(txtUsername.Text) || string.IsNullOrEmpty(txtPassword.Text))
             {
