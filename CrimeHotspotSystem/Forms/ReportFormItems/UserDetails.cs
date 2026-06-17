@@ -23,5 +23,10 @@ namespace CrimeHotspotSystem.Forms.ReportFormItems
             dashboardadmin.Show();
             this.Hide();
         }
+
+        private void UserDetails_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

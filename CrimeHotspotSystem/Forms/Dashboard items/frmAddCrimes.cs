@@ -58,7 +58,7 @@ namespace CrimeHotspotSystem.Forms.Dashboard_items
             else if (radioCritical.Checked) severity = "Critical";
 
             // 3. Database Connection and Insert Logic
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\richa\Downloads\CHA-System-main\CrimeHotspotSystem\CrimeDB.mdf;Integrated Security=True";
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\gs\Downloads\CHA-System-main\CHA-System-main\CrimeHotspotSystem\CrimeDB.mdf;Integrated Security=True";
 
             string query = @"INSERT INTO [dbo].[Crimes] 
                      (CrimeID, Type, Date, Severity, District, Division, Street) 

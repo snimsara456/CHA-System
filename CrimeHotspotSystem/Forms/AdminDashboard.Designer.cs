@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlNav = new System.Windows.Forms.Panel();
             this.btnProfile = new System.Windows.Forms.Button();
@@ -40,6 +41,9 @@
             this.lblUserName = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PnlFormLoader = new System.Windows.Forms.Panel();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -58,18 +62,18 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(199, 606);
+            this.panel1.Size = new System.Drawing.Size(265, 746);
             this.panel1.TabIndex = 0;
             // 
             // pnlNav
             // 
             this.pnlNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.pnlNav.Location = new System.Drawing.Point(0, 157);
-            this.pnlNav.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlNav.Location = new System.Drawing.Point(0, 193);
+            this.pnlNav.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlNav.Name = "pnlNav";
-            this.pnlNav.Size = new System.Drawing.Size(2, 81);
+            this.pnlNav.Size = new System.Drawing.Size(3, 100);
             this.pnlNav.TabIndex = 8;
             // 
             // btnProfile
@@ -79,10 +83,10 @@
             this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProfile.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnProfile.Location = new System.Drawing.Point(0, 322);
-            this.btnProfile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnProfile.Location = new System.Drawing.Point(0, 394);
+            this.btnProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Size = new System.Drawing.Size(199, 41);
+            this.btnProfile.Size = new System.Drawing.Size(265, 50);
             this.btnProfile.TabIndex = 7;
             this.btnProfile.Text = "Profile";
             this.btnProfile.UseVisualStyleBackColor = true;
@@ -96,10 +100,10 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.Red;
-            this.btnLogout.Location = new System.Drawing.Point(0, 565);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogout.Location = new System.Drawing.Point(0, 696);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(199, 41);
+            this.btnLogout.Size = new System.Drawing.Size(265, 50);
             this.btnLogout.TabIndex = 6;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = true;
@@ -112,10 +116,10 @@
             this.btnAddusers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddusers.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddusers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnAddusers.Location = new System.Drawing.Point(0, 281);
-            this.btnAddusers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddusers.Location = new System.Drawing.Point(0, 344);
+            this.btnAddusers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddusers.Name = "btnAddusers";
-            this.btnAddusers.Size = new System.Drawing.Size(199, 41);
+            this.btnAddusers.Size = new System.Drawing.Size(265, 50);
             this.btnAddusers.TabIndex = 5;
             this.btnAddusers.Text = "Add Users";
             this.btnAddusers.UseVisualStyleBackColor = true;
@@ -129,10 +133,10 @@
             this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReport.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnReport.Location = new System.Drawing.Point(0, 240);
-            this.btnReport.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReport.Location = new System.Drawing.Point(0, 294);
+            this.btnReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(199, 41);
+            this.btnReport.Size = new System.Drawing.Size(265, 50);
             this.btnReport.TabIndex = 4;
             this.btnReport.Text = "Report";
             this.btnReport.UseVisualStyleBackColor = true;
@@ -146,10 +150,10 @@
             this.btnAddCrime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddCrime.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddCrime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnAddCrime.Location = new System.Drawing.Point(0, 199);
-            this.btnAddCrime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddCrime.Location = new System.Drawing.Point(0, 244);
+            this.btnAddCrime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddCrime.Name = "btnAddCrime";
-            this.btnAddCrime.Size = new System.Drawing.Size(199, 41);
+            this.btnAddCrime.Size = new System.Drawing.Size(265, 50);
             this.btnAddCrime.TabIndex = 2;
             this.btnAddCrime.Text = "Add Crime";
             this.btnAddCrime.UseVisualStyleBackColor = true;
@@ -163,10 +167,10 @@
             this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDashboard.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnDashboard.Location = new System.Drawing.Point(0, 158);
-            this.btnDashboard.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDashboard.Location = new System.Drawing.Point(0, 194);
+            this.btnDashboard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(199, 41);
+            this.btnDashboard.Size = new System.Drawing.Size(265, 50);
             this.btnDashboard.TabIndex = 1;
             this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.UseVisualStyleBackColor = true;
@@ -180,9 +184,9 @@
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(199, 158);
+            this.panel2.Size = new System.Drawing.Size(265, 194);
             this.panel2.TabIndex = 0;
             // 
             // lblUserName
@@ -190,43 +194,67 @@
             this.lblUserName.AutoSize = true;
             this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblUserName.Location = new System.Drawing.Point(70, 101);
-            this.lblUserName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUserName.Location = new System.Drawing.Point(93, 124);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(56, 17);
+            this.lblUserName.Size = new System.Drawing.Size(68, 20);
             this.lblUserName.TabIndex = 1;
             this.lblUserName.Text = "ADMIN";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::CrimeHotspotSystem.Properties.Resources.user_244;
-            this.pictureBox1.Location = new System.Drawing.Point(55, 10);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(73, 12);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(80, 89);
+            this.pictureBox1.Size = new System.Drawing.Size(107, 110);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // PnlFormLoader
             // 
-            this.PnlFormLoader.Location = new System.Drawing.Point(203, 46);
-            this.PnlFormLoader.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PnlFormLoader.Location = new System.Drawing.Point(271, 57);
+            this.PnlFormLoader.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PnlFormLoader.Name = "PnlFormLoader";
-            this.PnlFormLoader.Size = new System.Drawing.Size(825, 560);
+            this.PnlFormLoader.Size = new System.Drawing.Size(1100, 689);
             this.PnlFormLoader.TabIndex = 1;
             this.PnlFormLoader.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlFormLoader_Paint);
             // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Location = new System.Drawing.Point(293, 21);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(36, 16);
+            this.lblDate.TabIndex = 2;
+            this.lblDate.Text = "Date";
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Location = new System.Drawing.Point(548, 21);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(38, 16);
+            this.lblTime.TabIndex = 3;
+            this.lblTime.Text = "Time";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // AdminDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(1028, 606);
+            this.ClientSize = new System.Drawing.Size(1371, 746);
+            this.Controls.Add(this.lblTime);
+            this.Controls.Add(this.lblDate);
             this.Controls.Add(this.PnlFormLoader);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.Black;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AdminDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -236,6 +264,7 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -253,5 +282,8 @@
         private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.Panel pnlNav;
         private System.Windows.Forms.Panel PnlFormLoader;
+        private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.Timer timer1;
     }
 }

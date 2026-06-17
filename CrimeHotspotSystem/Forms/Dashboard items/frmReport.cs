@@ -1,11 +1,11 @@
-﻿using System;
+﻿
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.IO;
 using System.Windows.Forms;
-using System.Xml.Linq;
 using ClosedXML.Excel;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
@@ -16,7 +16,7 @@ namespace CrimeHotspotSystem.Forms.Dashboard_items
     {
         #region Fields
 
-        private readonly string _connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\richa\Downloads\CHA-System-main\CrimeHotspotSystem\CrimeDB.mdf;Integrated Security=True";
+        private readonly string _connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\gs\Downloads\CHA-System-main\CHA-System-main\CrimeHotspotSystem\CrimeDB.mdf;Integrated Security=True";
 
         // Data sources
         private DataTable _currentTable = new DataTable();
@@ -33,6 +33,9 @@ namespace CrimeHotspotSystem.Forms.Dashboard_items
         private DataGridView dgvMain;
         private RadioButton rbCrimes;
         private RadioButton rbUsers;
+
+        // Select All Checkbox
+        private CheckBox chkSelectAll;
 
         #endregion
 
@@ -105,9 +108,21 @@ namespace CrimeHotspotSystem.Forms.Dashboard_items
                 lblCount.AutoSize = false;
                 lblCount.Size = new Size(cardWidth - 10, 40);
                 lblCount.Location = new Point(5, 40);
-                lblCount.Font = new System.Drawing.Font("Segoe UI", 22F, FontStyle.Bold);
                 lblCount.ForeColor = Color.FromArgb(41, 128, 185);
                 lblCount.TextAlign = ContentAlignment.MiddleCenter;
+                lblCount.AutoEllipsis = true; // Prevents text from bleeding out of the rectangle
+
+                // Adapt the font size based on whether it is a text card or a number card
+                if (titles[i] == "Most Common Category" || titles[i] == "Most Dangerous Area")
+                {
+                    // Smaller font for text so it fits the rectangle
+                    lblCount.Font = new System.Drawing.Font("Segoe UI", 12F, FontStyle.Bold);
+                }
+                else
+                {
+                    // Large font for number counts
+                    lblCount.Font = new System.Drawing.Font("Segoe UI", 22F, FontStyle.Bold);
+                }
 
                 cardPanel.Controls.Add(lblTitle);
                 cardPanel.Controls.Add(lblCount);
@@ -135,18 +150,30 @@ namespace CrimeHotspotSystem.Forms.Dashboard_items
             btnPdf.FlatAppearance.BorderSize = 0;
             btnPdf.Click += BtnPdf_Click;
 
+            // Build the Select All Checkbox just above the DataGridView
+            chkSelectAll = new CheckBox
+            {
+                Text = "Select All",
+                Location = new Point(22, 160), // Placed between control bar and grid
+                AutoSize = true,
+                Font = new System.Drawing.Font("Segoe UI", 9F, FontStyle.Bold),
+                ForeColor = Color.FromArgb(52, 73, 94)
+            };
+            chkSelectAll.CheckedChanged += ChkSelectAll_CheckedChanged;
+
             this.Controls.Add(rbCrimes);
             this.Controls.Add(rbUsers);
             this.Controls.Add(lblSearch);
             this.Controls.Add(txtSearch);
             this.Controls.Add(btnExcel);
             this.Controls.Add(btnPdf);
+            this.Controls.Add(chkSelectAll);
 
             // 3. Build DataGridView
             dgvMain = new DataGridView
             {
-                Location = new Point(20, 180),
-                Size = new Size(770, 450),
+                Location = new Point(20, 185),
+                Size = new Size(770, 445),
                 Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right,
                 BorderStyle = BorderStyle.None,
                 BackgroundColor = Color.White,
@@ -168,7 +195,20 @@ namespace CrimeHotspotSystem.Forms.Dashboard_items
 
         #endregion
 
-        #region Data Loading
+        #region Events & Data Loading
+
+        private void ChkSelectAll_CheckedChanged(object sender, EventArgs e)
+        {
+            if (dgvMain.Rows.Count > 0)
+            {
+                bool isChecked = chkSelectAll.Checked;
+                foreach (DataGridViewRow row in dgvMain.Rows)
+                {
+                    row.Cells["Select"].Value = isChecked;
+                }
+                dgvMain.EndEdit(); // Commit the changes immediately
+            }
+        }
 
         private void LoadMetricsData()
         {
@@ -177,11 +217,21 @@ namespace CrimeHotspotSystem.Forms.Dashboard_items
                 try
                 {
                     conn.Open();
-                    lblTotalCount.Text = FetchCount("SELECT COUNT(*) FROM Crimes", conn);
-                    lblCriticalCount.Text = FetchCount("SELECT COUNT(*) FROM Crimes WHERE Severity = 'Critical'", conn);
-                    lblCategoryCount.Text = FetchCount("SELECT COUNT(*) FROM Crimes WHERE Severity = 'High'", conn);
-                    lblAreaCount.Text = FetchCount("SELECT COUNT(*) FROM Crimes WHERE Severity = 'Medium'", conn);
-                    lblMonthCount.Text = FetchCount("SELECT COUNT(*) FROM Crimes WHERE MONTH(Date) = MONTH(GETDATE()) AND YEAR(Date) = YEAR(GETDATE())", conn);
+
+                    // 1. Total Crimes
+                    lblTotalCount.Text = FetchData("SELECT COUNT(*) FROM Crimes", conn, "0");
+
+                    // 2. Total Critical Crimes (Using LTRIM/RTRIM for NCHAR handling)
+                    lblCriticalCount.Text = FetchData("SELECT COUNT(*) FROM Crimes WHERE LTRIM(RTRIM(Severity)) = 'Critical'", conn, "0");
+
+                    // 3. Most Common Category
+                    lblCategoryCount.Text = FetchData("SELECT TOP 1 Type FROM Crimes GROUP BY Type ORDER BY COUNT(CrimeID) DESC", conn, "N/A");
+
+                    // 4. Most Dangerous Area (Division)
+                    lblAreaCount.Text = FetchData("SELECT TOP 1 Division FROM Crimes GROUP BY Division ORDER BY COUNT(CrimeID) DESC", conn, "N/A");
+
+                    // 5. Crimes This Month
+                    lblMonthCount.Text = FetchData("SELECT COUNT(*) FROM Crimes WHERE MONTH(Date) = MONTH(GETDATE()) AND YEAR(Date) = YEAR(GETDATE())", conn, "0");
                 }
                 catch (Exception ex)
                 {
@@ -235,6 +285,14 @@ namespace CrimeHotspotSystem.Forms.Dashboard_items
                     {
                         if (col.Name != "Select") col.ReadOnly = true;
                     }
+
+                    // Uncheck the "Select All" box automatically when loading new data
+                    if (chkSelectAll != null)
+                    {
+                        chkSelectAll.CheckedChanged -= ChkSelectAll_CheckedChanged;
+                        chkSelectAll.Checked = false;
+                        chkSelectAll.CheckedChanged += ChkSelectAll_CheckedChanged;
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -243,12 +301,12 @@ namespace CrimeHotspotSystem.Forms.Dashboard_items
             }
         }
 
-        private string FetchCount(string query, SqlConnection conn)
+        private string FetchData(string query, SqlConnection conn, string defaultValue = "0")
         {
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 object obj = cmd.ExecuteScalar();
-                return obj != null ? obj.ToString() : "0";
+                return (obj != null && obj != DBNull.Value) ? obj.ToString().Trim() : defaultValue;
             }
         }
 
@@ -276,18 +334,15 @@ namespace CrimeHotspotSystem.Forms.Dashboard_items
 
         private DataTable GetSelectedData()
         {
-            // Create a clone of the table structure
             DataTable exportTable = _currentTable.Clone();
 
             foreach (DataGridViewRow row in dgvMain.Rows)
             {
-                // Check if the checkbox is checked
                 bool isSelected = Convert.ToBoolean(row.Cells["Select"].Value);
 
                 if (isSelected)
                 {
                     DataRow newRow = exportTable.NewRow();
-                    // Copy data (ignoring the checkbox column which is at index 0 in the Grid, but not in DataTable)
                     for (int i = 0; i < _currentTable.Columns.Count; i++)
                     {
                         newRow[i] = row.Cells[i + 1].Value;

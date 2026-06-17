@@ -30,7 +30,7 @@ namespace CrimeHotspotSystem.Forms.Dashboard_items
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\richa\Downloads\CHA-System-main\CrimeHotspotSystem\CrimeDB.mdf;Integrated Security=True";
+            string connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\gs\Downloads\CHA-System-main\CHA-System-main\CrimeHotspotSystem\CrimeDB.mdf;Integrated Security=True";
 
             string gender = rbMale.Checked ? "Male" : (rbFemale.Checked ? "Female" : "");
 

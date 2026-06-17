@@ -39,6 +39,7 @@
             this.pnlTotCrime = new System.Windows.Forms.Panel();
             this.lblTotCrimes = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnimport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.pnlCrimeMonth.SuspendLayout();
             this.pnlMDA.SuspendLayout();
@@ -168,12 +169,23 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Total Crimes";
             // 
+            // btnimport
+            // 
+            this.btnimport.Location = new System.Drawing.Point(855, 213);
+            this.btnimport.Name = "btnimport";
+            this.btnimport.Size = new System.Drawing.Size(137, 32);
+            this.btnimport.TabIndex = 16;
+            this.btnimport.Text = "Import Crimes";
+            this.btnimport.UseVisualStyleBackColor = true;
+            this.btnimport.Click += new System.EventHandler(this.btnimport_Click);
+            // 
             // frmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(1100, 689);
+            this.Controls.Add(this.btnimport);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.pnlCrimeMonth);
@@ -209,5 +221,6 @@
         private System.Windows.Forms.Panel pnlTotCrime;
         private System.Windows.Forms.Label lblTotCrimes;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnimport;
     }
 }

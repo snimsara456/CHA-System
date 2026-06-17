@@ -34,6 +34,8 @@ namespace CrimeHotspotSystem.Forms
 
         private void AdminDashboard_Load(object sender, EventArgs e)
         {
+            timer1.Start();
+
             // 1. Update the label with the global username
             // Adding a fallback string just in case the variable is empty
             lblUserName.Text = !string.IsNullOrEmpty(GlobalVariables.LoggedInUserID)
@@ -185,6 +187,12 @@ namespace CrimeHotspotSystem.Forms
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblDate.Text = DateTime.Now.ToLongDateString();
+            lblTime.Text = DateTime.Now.ToLongTimeString();
         }
     }
 }
