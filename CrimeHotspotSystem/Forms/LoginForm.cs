@@ -14,12 +14,10 @@ namespace CrimeHotspotSystem
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            // TODO: Replace this with your actual database connection string
             string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\gs\Downloads\CHA-System-main\CHA-System-main\CrimeHotspotSystem\CrimeDB.mdf;Integrated Security=True";
 
             if (string.IsNullOrEmpty(txtUsername.Text) || string.IsNullOrEmpty(txtPassword.Text))
@@ -52,8 +50,10 @@ namespace CrimeHotspotSystem
                                 roleCommand.Parameters.AddWithValue("@username", GlobalVariables.LoggedInUserID);
                                 GlobalVariables.userRole = roleCommand.ExecuteScalar()?.ToString();
                             }
+
                             Console.WriteLine(GlobalVariables.userRole);
                             Console.WriteLine(GlobalVariables.LoggedInUserID);
+
                             AdminDashboard dashboard = new AdminDashboard();
                             dashboard.Show();
                             this.Hide();

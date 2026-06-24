@@ -14,14 +14,15 @@ namespace CrimeHotspotSystem.Forms
 {
     public partial class AdminDashboard : Form
     {
+        private Color sidebarColor = Color.FromArgb(34, 40, 52);
+        private Color activeBtnColor = Color.FromArgb(220, 235, 255);
+        private Color inactiveBtnColor = Color.FromArgb(34, 40, 52);
+
         public AdminDashboard()
         {
             InitializeComponent();
 
-            pnlNav.Height = btnDashboard.Height;
-            pnlNav.Top = btnDashboard.Top;
-            pnlNav.Left = btnDashboard.Left;
-            btnDashboard.BackColor = Color.FromArgb(46, 51, 73);
+            SetActiveButton(btnDashboard);
 
             this.PnlFormLoader.Controls.Clear();
             frmDashboard frmDashboard_vrb = new frmDashboard() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
@@ -32,38 +33,45 @@ namespace CrimeHotspotSystem.Forms
             this.FormClosing += (sender, e) => { Application.Exit(); };
         }
 
+        private void SetActiveButton(Button btn)
+        {
+            btnDashboard.BackColor = inactiveBtnColor;
+            btnDashboard.ForeColor = Color.White;
+            btnAddCrime.BackColor = inactiveBtnColor;
+            btnAddCrime.ForeColor = Color.White;
+            btnReport.BackColor = inactiveBtnColor;
+            btnReport.ForeColor = Color.White;
+            btnAddusers.BackColor = inactiveBtnColor;
+            btnAddusers.ForeColor = Color.White;
+            btnProfile.BackColor = inactiveBtnColor;
+            btnProfile.ForeColor = Color.White;
+
+            btn.BackColor = activeBtnColor;
+            btn.ForeColor = Color.FromArgb(34, 40, 52);
+
+            pnlNav.Height = btn.Height;
+            pnlNav.Top = btn.Top;
+            pnlNav.Left = btn.Left;
+        }
+
         private void AdminDashboard_Load(object sender, EventArgs e)
         {
             timer1.Start();
 
-            // 1. Update the label with the global username
-            // Adding a fallback string just in case the variable is empty
             lblUserName.Text = !string.IsNullOrEmpty(GlobalVariables.LoggedInUserID)
                                ? GlobalVariables.LoggedInUserID
                                : "Unknown User";
 
-            // 2. Check the global role and deactivate buttons if it is "REGULAR"
-            // Using OrdinalIgnoreCase makes it safe even if the database has "Regular" or "regular"
             if (string.Equals(GlobalVariables.userRole.Trim(), "REGULAR", StringComparison.OrdinalIgnoreCase))
             {
-                // Disabling the buttons so they are greyed out and unclickable
                 btnReport.Enabled = false;
                 btnAddusers.Enabled = false;
-
-                // OPTIONAL: If you want to hide them completely instead of just greying them out, 
-                // you can use .Visible = false; instead of .Enabled = false;
-                //btnReport.Visible = false;
-                //btnAddusers.Visible = false;
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            pnlNav.Height = btnAddCrime.Height;
-            pnlNav.Top = btnAddCrime.Top;
-            pnlNav.Left = btnAddCrime.Left;
-            btnAddCrime.BackColor = Color.FromArgb(46, 51, 73);
-
+            SetActiveButton(btnAddCrime);
             this.PnlFormLoader.Controls.Clear();
             frmAddCrimes frmAddCrimes_vrb = new frmAddCrimes() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             frmAddCrimes_vrb.FormBorderStyle = FormBorderStyle.None;
@@ -73,11 +81,7 @@ namespace CrimeHotspotSystem.Forms
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            pnlNav.Height = btnDashboard.Height;
-            pnlNav.Top = btnDashboard.Top;
-            pnlNav.Left = btnDashboard.Left;
-            btnDashboard.BackColor = Color.FromArgb(46, 51, 73);
-
+            SetActiveButton(btnDashboard);
             this.PnlFormLoader.Controls.Clear();
             frmDashboard frmDashboard_vrb = new frmDashboard() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             frmDashboard_vrb.FormBorderStyle = FormBorderStyle.None;
@@ -87,11 +91,7 @@ namespace CrimeHotspotSystem.Forms
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-            pnlNav.Height = btnReport.Height;
-            pnlNav.Top = btnReport.Top;
-            pnlNav.Left = btnReport.Left;
-            btnReport.BackColor = Color.FromArgb(46, 51, 73);
-
+            SetActiveButton(btnReport);
             this.PnlFormLoader.Controls.Clear();
             frmReport frmReport_vrb = new frmReport() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             frmReport_vrb.FormBorderStyle = FormBorderStyle.None;
@@ -101,11 +101,7 @@ namespace CrimeHotspotSystem.Forms
 
         private void btnAddusers_Click(object sender, EventArgs e)
         {
-            pnlNav.Height = btnAddusers.Height;
-            pnlNav.Top = btnAddusers.Top;
-            pnlNav.Left = btnAddusers.Left;
-            btnAddusers.BackColor = Color.FromArgb(46, 51, 73);
-
+            SetActiveButton(btnAddusers);
             this.PnlFormLoader.Controls.Clear();
             frmAddusers frmAddusers_vrb = new frmAddusers() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             frmAddusers_vrb.FormBorderStyle = FormBorderStyle.None;
@@ -115,61 +111,12 @@ namespace CrimeHotspotSystem.Forms
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
-            pnlNav.Height = btnProfile.Height;
-            pnlNav.Top = btnProfile.Top;
-            pnlNav.Left = btnProfile.Left;
-            btnProfile.BackColor = Color.FromArgb(46, 51, 73);
-
+            SetActiveButton(btnProfile);
             this.PnlFormLoader.Controls.Clear();
             frmProfile frmProfile_vrb = new frmProfile() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             frmProfile_vrb.FormBorderStyle = FormBorderStyle.None;
             this.PnlFormLoader.Controls.Add(frmProfile_vrb);
             frmProfile_vrb.Show();
-        }
-
-        private void btnDashboard_Leave(object sender, EventArgs e)
-        {
-            btnDashboard.BackColor = Color.FromArgb(24, 30, 54);
-        }
-
-        private void btnAddCrime_Leave(object sender, EventArgs e)
-        {
-            btnAddCrime.BackColor = Color.FromArgb(24, 30, 54);
-        }
-
-        private void btnReport_Leave(object sender, EventArgs e)
-        {
-            btnReport.BackColor = Color.FromArgb(24, 30, 54);
-        }
-
-        private void btnAddusers_Leave(object sender, EventArgs e)
-        {
-            btnAddusers.BackColor = Color.FromArgb(24, 30, 54);
-        }
-
-        private void btnProfile_Leave(object sender, EventArgs e)
-        {
-            btnProfile.BackColor = Color.FromArgb(24, 30, 54);
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pnlMDA_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void PnlFormLoader_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -184,15 +131,20 @@ namespace CrimeHotspotSystem.Forms
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lblDate.Text = DateTime.Now.ToLongDateString();
-            lblTime.Text = DateTime.Now.ToLongTimeString();
+            // Beautified Date & Time format with soft emojis
+            lblDate.Text = "📅  " + DateTime.Now.ToString("dddd, MMMM dd, yyyy");
+            lblTime.Text = "🕒  " + DateTime.Now.ToString("hh:mm:ss tt");
         }
+
+        private void btnDashboard_Leave(object sender, EventArgs e) { }
+        private void btnAddCrime_Leave(object sender, EventArgs e) { }
+        private void btnReport_Leave(object sender, EventArgs e) { }
+        private void btnAddusers_Leave(object sender, EventArgs e) { }
+        private void btnProfile_Leave(object sender, EventArgs e) { }
+        private void panel1_Paint(object sender, PaintEventArgs e) { }
+        private void pnlNav_Paint(object sender, PaintEventArgs e) { }
+        private void PnlFormLoader_Paint(object sender, PaintEventArgs e) { }
     }
 }

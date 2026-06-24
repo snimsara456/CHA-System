@@ -1,12 +1,11 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,30 +14,154 @@ namespace CrimeHotspotSystem.Forms.Dashboard_items
 {
     public partial class frmDashboard : Form
     {
-        [DllImport("Gdi32.DLL", EntryPoint = "CreateRoundRectRgn")]
-        private static extern IntPtr CreateRoundRectRgn
-               (
-                   int nLeftRect,
-                   int nTopRect,
-                   int nRightRect,
-                   int nBottomRect,
-                   int nWidthEllipse,
-                   int nHeightEllipse
-               );
-
         public frmDashboard()
         {
             InitializeComponent();
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
 
-            pnlTotCrime.Region = Region.FromHrgn(CreateRoundRectRgn(
-               0, 0, pnlTotCrime.Width, pnlTotCrime.Height, 30, 30));
+            // Wire up the custom paint event to draw smooth cards
+            pnlTotCrime.Paint += Card_Paint;
+            pnlMDA.Paint += Card_Paint;
+            pnlCrimeMonth.Paint += Card_Paint;
 
-            pnlMDA.Region = Region.FromHrgn(CreateRoundRectRgn(
-               0, 0, pnlMDA.Width, pnlMDA.Height, 30, 30));
+            SetupDataGridViewStyle();
+        }
 
-            pnlCrimeMonth.Region = Region.FromHrgn(CreateRoundRectRgn(
-               0, 0, pnlCrimeMonth.Width, pnlCrimeMonth.Height, 30, 30));
+        // Custom Paint Method to draw beautifully smooth rounded cards
+        private void Card_Paint(object sender, PaintEventArgs e)
+        {
+            Panel pnl = sender as Panel;
+            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+
+            // Clear the background to match the form, giving a transparent effect
+            e.Graphics.Clear(this.BackColor);
+
+            // Create a slightly inset rectangle for the card
+            Rectangle rect = new Rectangle(1, 1, pnl.Width - 3, pnl.Height - 3);
+            int radius = 15; // Smooth corner radius
+
+            using (GraphicsPath path = GetRoundedRectanglePath(rect, radius))
+            {
+                // 1. Fill the main card body with White
+                using (SolidBrush brush = new SolidBrush(Color.White))
+                {
+                    e.Graphics.FillPath(brush, path);
+                }
+
+                // 2. Determine accent color based on which panel is painting
+                Color accentColor = Color.Gray;
+                if (pnl.Name == "pnlTotCrime") accentColor = Color.Firebrick;
+                if (pnl.Name == "pnlMDA") accentColor = Color.Tomato;
+                if (pnl.Name == "pnlCrimeMonth") accentColor = Color.DodgerBlue;
+
+                // 3. Draw a modern colored accent strip at the top of the card
+                e.Graphics.SetClip(path);
+                using (SolidBrush accentBrush = new SolidBrush(accentColor))
+                {
+                    e.Graphics.FillRectangle(accentBrush, rect.X, rect.Y, rect.Width, 6); // 6px tall strip
+                }
+                e.Graphics.ResetClip();
+
+                // 4. Draw a very subtle, soft border around the card
+                using (Pen pen = new Pen(Color.FromArgb(215, 220, 225), 1.5f))
+                {
+                    e.Graphics.DrawPath(pen, path);
+                }
+            }
+        }
+
+        // Helper method to calculate the curved edges
+        private GraphicsPath GetRoundedRectanglePath(Rectangle bounds, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            int diameter = radius * 2;
+            Size size = new Size(diameter, diameter);
+            Rectangle arc = new Rectangle(bounds.Location, size);
+
+            path.AddArc(arc, 180, 90); // Top left arc
+            arc.X = bounds.Right - diameter;
+            path.AddArc(arc, 270, 90); // Top right arc
+            arc.Y = bounds.Bottom - diameter;
+            path.AddArc(arc, 0, 90);   // Bottom right arc
+            arc.X = bounds.Left;
+            path.AddArc(arc, 90, 90);  // Bottom left arc
+
+            path.CloseFigure();
+            return path;
+        }
+
+        private void SetupDataGridViewStyle()
+        {
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(215, 228, 242);
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(64, 64, 64);
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+            dataGridView1.ColumnHeadersHeight = 40;
+
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.FromArgb(220, 235, 255);
+            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.Black;
+            dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 9);
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.RowTemplate.Height = 35;
+            dataGridView1.GridColor = Color.FromArgb(235, 235, 235);
+
+            dataGridView1.CellPainting += DataGridView1_CellPainting;
+        }
+
+        private void DataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0 &&
+                dataGridView1.Columns[e.ColumnIndex].Name.Equals("Severity", StringComparison.OrdinalIgnoreCase))
+            {
+                e.PaintBackground(e.CellBounds, true);
+
+                string severityValue = (e.Value?.ToString() ?? "").Trim();
+
+                if (!string.IsNullOrEmpty(severityValue))
+                {
+                    Color badgeColor = Color.LightGray;
+                    Color textColor = Color.DimGray;
+
+                    if (severityValue.Equals("Low", StringComparison.OrdinalIgnoreCase))
+                    {
+                        badgeColor = Color.FromArgb(200, 240, 200);
+                        textColor = Color.DarkGreen;
+                    }
+                    else if (severityValue.Equals("Medium", StringComparison.OrdinalIgnoreCase))
+                    {
+                        badgeColor = Color.FromArgb(255, 230, 180);
+                        textColor = Color.DarkOrange;
+                    }
+                    else if (severityValue.Equals("Critical", StringComparison.OrdinalIgnoreCase))
+                    {
+                        badgeColor = Color.FromArgb(255, 180, 180);
+                        textColor = Color.DarkRed;
+                    }
+
+                    Rectangle rect = new Rectangle(e.CellBounds.X + 5, e.CellBounds.Y + 5, e.CellBounds.Width - 10, e.CellBounds.Height - 10);
+                    using (GraphicsPath path = new GraphicsPath())
+                    {
+                        int radius = 15;
+                        path.AddArc(rect.X, rect.Y, radius, radius, 180, 90);
+                        path.AddArc(rect.Right - radius, rect.Y, radius, radius, 270, 90);
+                        path.AddArc(rect.Right - radius, rect.Bottom - radius, radius, radius, 0, 90);
+                        path.AddArc(rect.X, rect.Bottom - radius, radius, radius, 90, 90);
+                        path.CloseFigure();
+
+                        e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+                        using (SolidBrush brush = new SolidBrush(badgeColor))
+                        {
+                            e.Graphics.FillPath(brush, path);
+                        }
+                    }
+
+                    TextRenderer.DrawText(e.Graphics, severityValue, e.CellStyle.Font, rect, textColor, TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
+                    e.Handled = true;
+                }
+            }
         }
 
         private void LoadCrimesData()
@@ -118,10 +241,7 @@ namespace CrimeHotspotSystem.Forms.Dashboard_items
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Leave empty or add logic if needed
         }
-
-        // --- NEW IMPORT LOGIC STARTS HERE ---
 
         private void btnimport_Click(object sender, EventArgs e)
         {
@@ -154,19 +274,15 @@ namespace CrimeHotspotSystem.Forms.Dashboard_items
                 {
                     conn.Open();
 
-                    // Start at i = 1 to skip the header row in the CSV
                     for (int i = 1; i < lines.Length; i++)
                     {
                         string line = lines[i];
                         if (string.IsNullOrWhiteSpace(line)) continue;
 
-                        // Split the row by commas
                         string[] data = line.Split(',');
 
-                        // Make sure the row has at least the 6 columns
                         if (data.Length >= 6)
                         {
-                            // Parse Data
                             if (!int.TryParse(data[0].Trim(), out int crimeId)) continue;
 
                             string type = data[1].Trim();
@@ -176,11 +292,8 @@ namespace CrimeHotspotSystem.Forms.Dashboard_items
                             string severity = data[3].Trim();
                             string district = data[4].Trim();
                             string street = data[5].Trim();
-
-                            // Division is kept blank if your CSV doesn't have it
                             string division = "";
 
-                            // Insert into Database safely (Checking for duplicates using IF NOT EXISTS)
                             string query = @"
                                 IF NOT EXISTS (SELECT 1 FROM Crimes WHERE CrimeID = @CrimeID)
                                 BEGIN
@@ -201,18 +314,16 @@ namespace CrimeHotspotSystem.Forms.Dashboard_items
                                 int rowsAffected = cmd.ExecuteNonQuery();
 
                                 if (rowsAffected > 0)
-                                    successCount++; // Successfully inserted
+                                    successCount++;
                                 else
-                                    skipCount++;    // Skipped because CrimeID already exists
+                                    skipCount++;
                             }
                         }
                     }
                 }
 
-                // Show Results
                 MessageBox.Show($"Import Complete!\n\nSuccessfully Imported: {successCount}\nSkipped (Duplicates): {skipCount}", "Import Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Refresh the Dashboard Data and Metrics!
                 LoadCrimesData();
                 LoadDashboardMetrics();
             }

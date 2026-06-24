@@ -57,34 +57,19 @@
         private void InitializeComponent()
 
         {
-
             this.SuspendLayout();
-
-            //
-
+            // 
             // frmReport
-
-            //
-
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
             this.ClientSize = new System.Drawing.Size(1100, 689);
-
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-
             this.Name = "frmReport";
-
             this.Text = "frmReport";
-
             this.Load += new System.EventHandler(this.frmReport_Load_1);
-
             this.ResumeLayout(false);
-
-
 
         }
 

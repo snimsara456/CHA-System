@@ -13,38 +13,21 @@ namespace CrimeHotspotSystem.Forms.Dashboard_items
 {
     public partial class frmProfile : Form
     {
-        //private readonly object GlobalVariables;
+        // Connection string defined as a class field
+        private string connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\gs\Downloads\CHA-System-main\CHA-System-main\CrimeHotspotSystem\CrimeDB.mdf;Integrated Security=True";
 
         public frmProfile()
         {
             InitializeComponent();
         }
 
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-        // 1. Connection string defined as a class field
-        private string connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\gs\Downloads\CHA-System-main\CHA-System-main\CrimeHotspotSystem\CrimeDB.mdf;Integrated Security=True";
-
-        
-
         private void frmProfile_Load(object sender, EventArgs e)
         {
-            // 2. Simply call the method here
             LoadUserData();
         }
 
         private void LoadUserData()
         {
-            // CHANGED: Used 'Id' instead of 'UserID' to match your database schema
             string query = "SELECT FullName, Rank, PoliceID, NIC, PoliceStation, Department, Phone FROM Users WHERE Username = @Id";
 
             using (SqlConnection con = new SqlConnection(connString))
@@ -71,7 +54,9 @@ namespace CrimeHotspotSystem.Forms.Dashboard_items
                     }
                     else
                     {
-                        MessageBox.Show("User details not found.");
+                        // Fallback if no user is found
+                        lblName.Text = "Not Found";
+                        lblRank.Text = "N/A";
                     }
                 }
                 catch (Exception ex)
@@ -80,5 +65,9 @@ namespace CrimeHotspotSystem.Forms.Dashboard_items
                 }
             }
         }
+
+        // Empty event handlers kept to prevent designer errors
+        private void label10_Click(object sender, EventArgs e) { }
+        private void label9_Click(object sender, EventArgs e) { }
     }
 }
